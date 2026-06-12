@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1E1E1E">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VERIFY MEAL"
+        android:textColor="#00E676"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etFoodItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Food Items"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00E676"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Total Calories (kcal)"
+        android:inputType="numberDecimal"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00E676"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/etProtein"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Pro (g)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#888888"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00E676"
+            android:layout_marginEnd="4dp"/>
+
+        <EditText
+            android:id="@+id/etCarbs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Carb (g)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#888888"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00E676"
+            android:layout_marginEnd="4dp"/>
+
+        <EditText
+            android:id="@+id/etFats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Fat (g)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#888888"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00E676"/>
+    </LinearLayout>
+</LinearLayout>

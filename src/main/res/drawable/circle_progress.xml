@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate android:fromDegrees="270" android:toDegrees="270">
+            <shape android:shape="ring" android:thickness="14dp" android:useLevel="true">
+                <gradient android:startColor="#00E676" android:endColor="#00B0FF" android:type="linear" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

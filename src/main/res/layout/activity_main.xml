@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:ignore="HardcodedText">
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_preferences"
+        app:tint="#888888"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"/>
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SYSTEM READY"
+        android:textColor="#888888"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"/>
+
+    <!-- NEW: Gamification Badges -->
+    <LinearLayout
+        android:id="@+id/llGamification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔥 0 Day"
+            android:textColor="#FF9800"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tvXp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌟 0 XP"
+            android:textColor="#FFEA00"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Recovery Gauge Area -->
+    <ProgressBar
+        android:id="@+id/pbRecovery"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:max="100"
+        android:progress="100"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/llGamification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvRecoveryPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textColor="#00E676"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/pbRecovery"
+        app:layout_constraintBottom_toBottomOf="@id/pbRecovery"
+        app:layout_constraintStart_toStartOf="@id/pbRecovery"
+        app:layout_constraintEnd_toEndOf="@id/pbRecovery"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTrends"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW TRENDS"
+        android:textColor="#00B0FF"
+        app:layout_constraintTop_toBottomOf="@id/pbRecovery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- AI Coach Insight Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvCoach"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#1E1E1E"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnTrends"
+        app:layout_constraintBottom_toTopOf="@+id/llMics">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AI COACH INSIGHT"
+                    android:textColor="#9C27B0"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <ImageButton
+                    android:id="@+id/btnRefreshCoach"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_popup_sync"
+                    app:tint="#00B0FF"/>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/tvCoachMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tap the refresh icon to get your daily insight!"
+                    android:textColor="#E0E0E0"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"/>
+            </ScrollView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Dual Mic Setup -->
+    <LinearLayout
+        android:id="@+id/llMics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="WORKOUT"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#00B0FF"
+            app:icon="@android:drawable/ic_btn_speak_now"
+            app:iconTint="#FFFFFF" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="FOOD"
+            android:textColor="#121212"
+            app:backgroundTint="#00E676"
+            app:icon="@android:drawable/ic_btn_speak_now"
+            app:iconTint="#121212" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
